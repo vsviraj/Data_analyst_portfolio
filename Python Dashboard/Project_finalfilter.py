@@ -15,8 +15,7 @@ def age_grouping(age):
         return '46-55yrs'
     else:
         return 'More than 55yrs'
-external_stylesheets = ['assets/style/styles.css']
-app = Dash(__name__,external_stylesheets = external_stylesheets)
+app = Dash(__name__)
 customer_df = pd.read_csv('P6-UK-Bank-Customers (1).csv')
 customer_df['Age Group'] = customer_df['Age'].apply(age_grouping)
 customer_df['Date Joined'] = pd.to_datetime(customer_df['Date Joined'],format='%d.%b.%y')
